@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/callback.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/callback",
+      "methods": ["GET", "POST", "OPTIONS"],
+      "dest": "/api/callback.js"
+    },
+    {
+      "src": "/",
+      "dest": "/api/callback.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
